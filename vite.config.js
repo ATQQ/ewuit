@@ -2,7 +2,7 @@ const path = require('path');
 const typescript = require('@rollup/plugin-typescript');
 const { defineConfig } = require('vite');
 
-const libName = 'LibName';
+const libName = 'Ewait';
 const bundlePrefix = 'index';
 
 // 入口

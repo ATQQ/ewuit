@@ -1,12 +1,12 @@
 {
-  "name": "tpl-web-lib",
-  "version": "0.0.3",
-  "description": "web library template",
+  "name": "ewuit",
+  "version": "0.0.0",
+  "description": "an easy web ui inspect tool",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "serve": "vite",
+    "dev": "vite",
     "build": "run-s build:*",
     "build:source": "vite build",
     "build:type": "tsup src/index.ts --dts-only",
