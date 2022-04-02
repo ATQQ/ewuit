@@ -1,0 +1,59 @@
+.ewuit-ui-tool-panel {
+  position: fixed;
+  right: 30px;
+  bottom: 60px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 40px;
+  z-index: 9999;
+  &::before {
+    content: '🚀';
+  }
+  &.active {
+    background: rgba(251, 243, 25, 0.2);
+  }
+  &.active::before {
+    content: '🎉';
+  }
+  transition: all 0.3s ease-in-out;
+  div {
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.ewuit-ui-tool-panel.active {
+  .attr-btn,
+  .distance-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(158 158 158 / 30%);
+    position: absolute;
+    bottom: 0px;
+    &.active {
+      background-color: #1a161a;
+      &::before {
+        color: #fff;
+      }
+    }
+  }
+  .attr-btn {
+    transform: translate(-40px, -30px);
+    &::before {
+      content: '属性';
+      font-size: 12px;
+      color: #000;
+    }
+  }
+  .distance-btn {
+    transform: translate(-40px, 30px);
+    &::before {
+      content: '间距';
+      font-size: 12px;
+      color: #000;
+    }
+  }
+}

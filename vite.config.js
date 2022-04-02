@@ -9,6 +9,11 @@ const bundlePrefix = 'index';
 const entry = path.resolve(__dirname, 'src/index.ts');
 
 module.exports = defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   plugins: [
     typescript({
       target: 'es5',
