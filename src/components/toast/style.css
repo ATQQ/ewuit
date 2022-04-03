@@ -1,0 +1,25 @@
+.ewuit-toast-wrapper {
+  text-align: center;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.ewuit-toast-wrapper p {
+  display: block;
+  padding: 20px 12px;
+  max-width: 252px;
+  background-color: #1a161a;
+  border-radius: 10px;
+  color: #ffffff;
+  margin: 0 auto;
+  margin-top: 46vh;
+  font-weight: 400;
+  font-family: PingFangSC-Regular;
+  font-size: var(--toast-font-size);
+  text-align: center;
+  transform: scale(var(--toast-scale));
+}

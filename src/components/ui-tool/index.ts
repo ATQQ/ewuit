@@ -5,7 +5,8 @@ import {
 } from '@/utils';
 import style from './index.scss';
 
-const uiWrapperClass = 'ewuit-ui-tool-panel';
+// TODO: 类名修改
+export const uiWrapperClass = 'ewuit-ui-tool-panel';
 
 export default class EwuitUITool {
   private static ui: HTMLElement;
@@ -27,7 +28,7 @@ export default class EwuitUITool {
       return pre;
     }, {});
 
-    // 状态改变
+    // 改变状态
     const target:HTMLElement = e.target as HTMLElement;
     target.classList.toggle('active');
     if (this.btnTypeMap.has(target)) {
@@ -52,8 +53,11 @@ export default class EwuitUITool {
       return pre;
     }, {});
 
+    // TODO：有优化空间
+    // 先执行关闭
+    // 后执行打开
     // 执行自定义回掉
-    Object.keys(diffStatus).forEach((k) => {
+    Object.keys(diffStatus).sort((k1, k2) => diffStatus[k1] - diffStatus[k2]).forEach((k) => {
       if (typeof this?.callbackList?.[k] === 'function') {
         this.callbackList[k](diffStatus[k]);
       }

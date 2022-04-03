@@ -18,9 +18,9 @@
   &.active::before {
     content: '🎉';
   }
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-out;
   div {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-out;
   }
 }
 
