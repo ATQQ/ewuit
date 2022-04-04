@@ -12,11 +12,14 @@
   --cover-second-color: #2590ff;
   --cover-size-display: none;
   --cover-distance-display: none;
+  --cover-attribute-border-radius: 0;
+  --cover-distance-first-border-radius: 0;
+  --cover-distance-second-border-radius: 0;
 
   /* Distance Tool */
   --distance-font-size: 8px;
 
-  /* Element Tool */
+  /* Attribute Tool */
 
   --modal-font-size: 12px;
   --modal-min-width: 180px;

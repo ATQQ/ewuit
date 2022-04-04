@@ -182,7 +182,9 @@ class DistanceTool {
    */
   refreshCover() {
     const [first, second] = this.domStack;
+    setRootStyleProperty('--cover-distance-first-border-radius', getComputedStyle(first).borderRadius);
     this.updateCover(first, this.firstCover);
+    setRootStyleProperty('--cover-distance-second-border-radius', getComputedStyle(first).borderRadius);
     this.updateCover(second, this.secondCover);
   }
 

@@ -16,7 +16,8 @@ import {
   updateDomDisplay,
   updateDomStyles,
   unitValue,
-} from '../../utils';
+  setRootStyleProperty,
+} from '@/utils';
 import { updateCoverDom } from '../public';
 import style from './style.css';
 
@@ -189,6 +190,7 @@ class ElementTool {
    * 刷新遮罩
    */
   refreshCover() {
+    setRootStyleProperty('--cover-attribute-border-radius', getComputedStyle(this.clickDom).borderRadius);
     updateCoverDom(this.clickDom, this.coverDom, this.cfg.pixelConversion);
     updateDomDisplay(this.coverDom);
   }

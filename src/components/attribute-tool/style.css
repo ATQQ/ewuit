@@ -7,6 +7,9 @@
   );
   border: var(--cover-border-width)
     solid var(--cover-first-color);
+  border-radius: var(
+    --cover-attribute-border-radius
+  );
   /* 部分第三方页面部分元素层级非常高 */
   position: fixed;
   z-index: 9999;

@@ -15,6 +15,9 @@ div.ewuit-comp-cover-first {
   );
   border: var(--cover-border-width)
     solid var(--cover-first-color);
+  border-radius: var(
+    --cover-distance-first-border-radius
+  );
 }
 
 .ewuit-comp-cover-first::after,
@@ -69,6 +72,9 @@ div.ewuit-comp-cover-second {
   );
   border: var(--cover-border-width)
     solid var(--cover-second-color);
+  border-radius: var(
+    --cover-distance-second-border-radius
+  );
 }
 
 div.ewuit-comp-rulers {
