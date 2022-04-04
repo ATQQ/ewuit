@@ -5,6 +5,11 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ATQQ/ewuit"
+  },
+  "homepage": "https://github.com/ATQQ/ewuit",
   "scripts": {
     "dev": "vite",
     "build": "run-s build:*",
@@ -12,9 +17,9 @@
     "build:type": "tsup src/index.ts --dts-only",
     "lint": "eslint src --fix --ext .ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["ewuit","ui-tools","ui-inspect","web-inspect","web-sdk"],
+  "author": "sugar",
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
