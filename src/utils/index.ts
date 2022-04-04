@@ -390,7 +390,7 @@ export function getRootStylePropertyValue(key: string) {
 }
 
 export function setRootStyleProperty(key: string, value: string) {
-  document.documentElement.style.setProperty(key, value);
+  document.documentElement.style.setProperty(key, value, 'important');
 }
 
 export function unitValue(value: string|number, unit = 'px') {

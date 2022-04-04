@@ -144,7 +144,10 @@ class DistanceTool {
     }
 
     // 控制尺寸的展示
-    setRootStyleProperty('--cover-display', domStack.length === 1 ? 'block' : 'none');
+    setRootStyleProperty('--cover-size-display', domStack.length === 1 ? 'block' : 'none');
+    // 控制距离展示
+    setRootStyleProperty('--cover-distance-display', domStack.length === 1 ? 'none' : 'block');
+
     this.refreshCover();
     this.refreshRulers();
     this.refreshDistance();

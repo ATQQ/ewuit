@@ -10,7 +10,8 @@
   --cover-border-width: 0.75px;
   --cover-first-color: #b000ff;
   --cover-second-color: #2590ff;
-  --cover-display: 'none';
+  --cover-size-display: none;
+  --cover-distance-display: none;
 
   /* Distance Tool */
   --distance-font-size: 8px;

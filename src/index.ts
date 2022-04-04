@@ -11,7 +11,7 @@ class Ewuit {
 
   constructor(options?:Partial<EwuitOps>) {
     this.shadowPage = null;
-    addStyleDom(document.body, varStyle);
+    addStyleDom(document.documentElement, varStyle);
     attributeTool.config(options?.toolConfig?.attributeTool);
     distanceTool.config(options?.toolConfig?.distanceTool);
     // TODO: 特殊处理meta viewport 不是1的情况
