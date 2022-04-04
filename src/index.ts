@@ -9,7 +9,7 @@ import { EwuitOps } from './types';
 class Ewuit {
   private shadowPage: HTMLElement | null;
 
-  constructor(options:Partial<EwuitOps>) {
+  constructor(options?:Partial<EwuitOps>) {
     this.shadowPage = null;
     addStyleDom(document.body, varStyle);
     attributeTool.config(options?.toolConfig?.attributeTool);
