@@ -1,0 +1,33 @@
+:root {
+  /* Font */
+  --ewuit-font-family: PingFangSC-Regular;
+  /* Toast */
+  --toast-font-size: 14px;
+  --toast-scale: 1;
+
+  /* Cover */
+  --cover-font-size: 8px;
+  --cover-border-width: 0.75px;
+  --cover-first-color: #b000ff;
+  --cover-second-color: #2590ff;
+  --cover-display: 'none';
+
+  /* Distance Tool */
+  --distance-font-size: 8px;
+
+  /* Element Tool */
+
+  --modal-font-size: 12px;
+  --modal-min-width: 180px;
+  --modal-max-width: 220px;
+  --modal-border-radius: 10px;
+  --modal-padding-left: 15px;
+  --modal-padding-top: 12px;
+  --modal-scale: 1;
+
+  /* JS */
+  --ewuit-comp-cover-top: 0;
+  --ewuit-comp-cover-bottom: 0;
+  --ewuit-comp-cover-left: 0;
+  --ewuit-comp-cover-right: 0;
+}

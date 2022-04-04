@@ -1,11 +1,23 @@
-/**
- * 注释信息
- */
-export interface DataItem {
-    /**
-     * 唯一标识
-     */
-    id?: string
-    value1?: string
-    value2?: number
+import { FUN_TYPE } from '@/constants';
+
+export type PixelConversion = (px: number | string) => string
+
+export interface AttributeToolConfig {
+  pixelConversion?: PixelConversion
+}
+export interface DistanceToolConfig {
+  pixelConversion?: PixelConversion
+}
+export interface ToolConfig {
+  attributeTool?: AttributeToolConfig
+  distanceTool?: DistanceToolConfig
+}
+
+export interface UIInitOps{
+  [FUN_TYPE.ATTRIBUTE]:(v:boolean)=>void
+  [FUN_TYPE.DISTANCE]:(v:boolean)=>void
+}
+
+export interface EwuitOps{
+  toolConfig?:ToolConfig
 }

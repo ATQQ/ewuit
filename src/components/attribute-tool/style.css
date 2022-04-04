@@ -1,0 +1,108 @@
+.ewuit-comp-cover {
+  background-color: rgba(
+    196,
+    64,
+    255,
+    0.1
+  );
+  border: var(--cover-border-width)
+    solid var(--cover-first-color);
+  /* 部分第三方页面部分元素层级非常高 */
+  position: fixed;
+  z-index: 9999;
+  /* 允许事件穿透，这样可以选取子元素 */
+  pointer-events: none;
+  /* 默认不展示 */
+  display: none;
+  box-sizing: border-box;
+}
+
+.ewuit-comp-cover::after,
+.ewuit-comp-cover::before {
+  position: absolute;
+  display: block;
+  font-weight: 400;
+  font-family: var(--ewuit-font-family);
+  font-size: var(--cover-font-size);
+  color: var(--cover-first-color);
+  line-height: var(--cover-font-size);
+  border-radius: 2px;
+  z-index: 1;
+  padding: 0 4px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  );
+  padding: 5px;
+  box-sizing: border-box;
+}
+.ewuit-comp-cover::before {
+  left: 50%;
+  top: var(--ewuit-comp-cover-top);
+  bottom: var(
+    --ewuit-comp-cover-bottom
+  );
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  content: attr(data-w);
+  box-sizing: border-box;
+}
+
+.ewuit-comp-cover::after {
+  left: var(--ewuit-comp-cover-left);
+  right: var(--ewuit-comp-cover-right);
+  top: 50%;
+  transform: translateX(
+      calc(100% + 3px)
+    )
+    translateY(-50%);
+  content: attr(data-h);
+}
+
+.ewuit-comp-modal {
+  min-width: var(--modal-max-width);
+  max-width: var(--modal-min-width);
+  position: fixed;
+  /* 比自己的cover 低一层 */
+  z-index: 9998;
+  left: 100px;
+}
+
+.ewuit-comp-wrapper {
+  opacity: 0.95;
+  background: #1a161a;
+  border-radius: var(
+    --modal-border-radius
+  );
+  padding-left: var(
+    --modal-padding-left
+  );
+  padding-right: var(
+    --modal-padding-left
+  );
+  padding-top: var(--modal-padding-top);
+  padding-bottom: var(
+    --modal-padding-top
+  );
+  float: left;
+}
+
+.ewuit-comp-modal p {
+  font-weight: 400;
+  font-family: var(--ewuit-font-family);
+  font-size: var(--modal-font-size);
+  color: #ffffff;
+  padding-bottom: var(
+    --modal-padding-top
+  );
+  margin: 0;
+}
+
+.ewuit-comp-modal p:last-child {
+  padding-bottom: 0;
+}
+.ewuit-comp-modal p span {
+  margin-right: 15px;
+}

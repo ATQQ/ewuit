@@ -1,15 +1,12 @@
 import {
-  addClass, addStyleDom, addToHtml, h, throttle,
+  addStyleDom, addToHtml, h, throttle,
 } from '../../utils';
 import toastStyle from './style.css';
 
 type Toast = (string?: string, timeout?: number) => void
 
-const wrapperClass = 'ewuit-toast-wrapper';
-
 function toast(msg = '', timeout = 500) {
-  const wrapper = h('div');
-  addClass(wrapper, wrapperClass);
+  const wrapper = h('div', 'ewuit-toast-wrapper');
   addStyleDom(wrapper, toastStyle);
 
   const p = h('p');

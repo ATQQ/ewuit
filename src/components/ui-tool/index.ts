@@ -1,7 +1,7 @@
 import { FUN_TYPE } from '@/constants';
 import { UIInitOps } from '@/types';
 import {
-  addClass, addStyleDom, addToBody, h,
+  addStyleDom, addToBody, h,
 } from '@/utils';
 import style from './index.scss';
 
@@ -80,12 +80,10 @@ export default class EwuitUITool {
       toolTip,
       style,
     );
-    const attributeBtn = h('div');
-    addClass(attributeBtn, 'attr-btn');
+    const attributeBtn = h('div', 'attr-btn');
     this.btnTypeMap.set(attributeBtn, FUN_TYPE.ATTRIBUTE);
 
-    const distanceBtn = h('div');
-    addClass(distanceBtn, 'distance-btn');
+    const distanceBtn = h('div', 'distance-btn');
     this.btnTypeMap.set(distanceBtn, FUN_TYPE.DISTANCE);
 
     this.unIndependenceButtonList.push(attributeBtn, distanceBtn);

@@ -6,6 +6,7 @@
   top: 0;
   right: 0;
   bottom: 0;
+  pointer-events: none;
 }
 
 .ewuit-toast-wrapper p {
@@ -18,7 +19,7 @@
   margin: 0 auto;
   margin-top: 46vh;
   font-weight: 400;
-  font-family: PingFangSC-Regular;
+  font-family: var(--ewuit-font-family);
   font-size: var(--toast-font-size);
   text-align: center;
   transform: scale(var(--toast-scale));

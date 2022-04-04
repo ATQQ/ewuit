@@ -1,4 +1,4 @@
-# ewait
+# ewuit
 means => an easy web ui inspect tool
 ## Usage
 TODO: 演示效果
@@ -8,24 +8,24 @@ add script in html template
 ```html
 <script src="https://unpkg.com/ewuit@latest/dist/index.min.js"></script>
 <script>
-const Ewait =window.Ewait
+const Ewuit =window.Ewuit
 </script>
 ```
 
 ### NPM
 ```sh
 # npm
-npm i ewait
+npm i ewuit
 
 # yarn
-yarn add ewait
+yarn add ewuit
 
 # pnpm
-pnpm add ewait
+pnpm add ewuit
 ```
 
 ```ts
-import Ewait from 'ewuit'
+import Ewuit from 'ewuit'
 ```
 ## Feature
 * [ ] Attributes
