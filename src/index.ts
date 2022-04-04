@@ -39,6 +39,7 @@ class Ewuit {
         return;
       }
       this.shadowPage = clonePage();
+      document.body.setAttribute('hidden', 'true');
       // 特殊处理body高度超过视图的，阻止其滑动
       if (document.body.scrollHeight >= getScreenHeight()) {
         const t = document.body;
@@ -47,6 +48,7 @@ class Ewuit {
       }
     } else if (this.shadowPage) {
       this.shadowPage.remove();
+      document.body.removeAttribute('hidden');
       // 恢复原DOM的overflow
       document.body.style.overflow = document.body.getAttribute('data-overflow') || 'visible';
       this.shadowPage = null;

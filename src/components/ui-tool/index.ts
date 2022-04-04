@@ -1,7 +1,7 @@
 import { FUN_TYPE } from '@/constants';
 import { UIInitOps } from '@/types';
 import {
-  addStyleDom, addToBody, h,
+  addStyleDom, addToHtml, h,
 } from '@/utils';
 import style from './index.scss';
 
@@ -90,7 +90,7 @@ export default class EwuitUITool {
 
     toolTip.appendChild(attributeBtn);
     toolTip.appendChild(distanceBtn);
-    addToBody(toolTip);
+    addToHtml(toolTip);
 
     this.ui = toolTip;
     this.ui.addEventListener('click', this.bindTogglePanel.bind(this));

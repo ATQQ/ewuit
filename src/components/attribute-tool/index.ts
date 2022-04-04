@@ -2,7 +2,6 @@ import { publicTool } from '@/components';
 import { AttributeToolConfig } from '@/types';
 import {
   addStyleDom,
-  addToBody,
   defaultPixelConversion,
   getDomRects,
   getRootStylePropertyValue,
@@ -17,6 +16,7 @@ import {
   updateDomStyles,
   unitValue,
   setRootStyleProperty,
+  addToHtml,
 } from '@/utils';
 import { updateCoverDom } from '../public';
 import style from './style.css';
@@ -73,7 +73,7 @@ class ElementTool {
     const coverDom = h('div', 'ewuit-comp-cover');
     addStyleDom(coverDom, style);
     preventTouchMove(coverDom);
-    addToBody(coverDom);
+    addToHtml(coverDom);
 
     this.coverDom = coverDom;
   }
@@ -92,7 +92,7 @@ class ElementTool {
       this.clear();
     });
 
-    addToBody(modalDom);
+    addToHtml(modalDom);
     this.modalDom = modalDom;
   }
 

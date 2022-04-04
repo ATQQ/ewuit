@@ -75,25 +75,23 @@ export function clonePage() {
 
   // ----- 下面处理避免页面闪烁 ------
   // 先完全透明
-  updateDomStyles(tBody, {
-    opacity: '0',
-  });
+  // updateDomStyles(tBody, {
+  //   opacity: '0',
+  // });
 
   // 将clone的视图滚动到原视图一样的位置，避免与原视图不一致
   assignmentDomStyle(tBody, document.body);
 
   // 一段时间后，完成布局后
   setTimeout(() => {
-    // 加一个背景色，避免与原页面内容重叠
     // 添加zIndex 避免原页面元素的层级过高，元素隐藏后，原页面显现出来
     updateDomStyles(shadowDom, {
-      backgroundColor: '#ffffff',
       zIndex: '5000',
     });
     // 恢复透明度
-    updateDomStyles(tBody, {
-      opacity: '1',
-    });
+    // updateDomStyles(tBody, {
+    //   opacity: '1',
+    // });
   }, 500);
 
   return shadowDom;

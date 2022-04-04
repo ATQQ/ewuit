@@ -2,7 +2,7 @@ import { publicTool } from '@/components';
 import { DistanceToolConfig } from '@/types';
 import {
   addStyleDom,
-  addToBody,
+  addToHtml,
   defaultPixelConversion,
   getDomRects,
   h,
@@ -45,7 +45,7 @@ class DistanceTool {
     this.domStack = [];
 
     this.compDom = h('div', 'ewuit-comp-distance-wrapper');
-    addToBody(this.compDom);
+    addToHtml(this.compDom);
     addStyleDom(this.compDom, distanceStyle);
 
     this.initCover();
