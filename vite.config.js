@@ -2,13 +2,17 @@ const path = require('path');
 const typescript = require('@rollup/plugin-typescript');
 const { defineConfig } = require('vite');
 
-const libName = 'LibName';
+const libName = 'Ewuit';
 const bundlePrefix = 'index';
-
 // 入口
 const entry = path.resolve(__dirname, 'src/index.ts');
 
 module.exports = defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   plugins: [
     typescript({
       target: 'es5',
@@ -20,7 +24,7 @@ module.exports = defineConfig({
   build: {
     sourcemap: true,
     outDir: 'dist',
-    minify: !process.env.dev,
+    minify: process.env.NODE_ENV === 'production',
     lib: {
       entry,
       name: libName,

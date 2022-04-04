@@ -19,6 +19,10 @@
         "import/no-unresolved":"off",
         "import/no-extraneous-dependencies":"off",
         "no-shadow":"off",
-        "no-unused-vars":"off"
+        "no-unused-vars":"off",
+        "class-methods-use-this":"off",
+        "no-param-reassign":"off",
+        "no-use-before-define":"off",
+        "import/prefer-default-export":"off"
     }
 }

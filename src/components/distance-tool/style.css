@@ -1,0 +1,161 @@
+div[class^='ewuit-comp-cover-'] {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  display: none;
+  box-sizing: border-box;
+}
+
+div.ewuit-comp-cover-first {
+  background-color: rgba(
+    196,
+    64,
+    255,
+    0.1
+  );
+  border: var(--cover-border-width)
+    solid var(--cover-first-color);
+  border-radius: var(
+    --cover-distance-first-border-radius
+  );
+  pointer-events: none;
+}
+
+.ewuit-comp-cover-first::after,
+.ewuit-comp-cover-first::before {
+  pointer-events: none;
+  position: absolute;
+  display: var(--cover-size-display);
+  font-weight: 400;
+  font-family: var(--ewuit-font-family);
+  font-size: var(--cover-font-size);
+  color: var(--cover-first-color);
+  line-height: var(--cover-font-size);
+  border-radius: 2px;
+  z-index: 1;
+  padding: 0 4px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  );
+  padding: 5px;
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+.ewuit-comp-cover-first::before {
+  left: 50%;
+  top: var(--ewuit-comp-cover-top);
+  bottom: var(
+    --ewuit-comp-cover-bottom
+  );
+  transform: translateX(-50%);
+  content: attr(data-w);
+  box-sizing: border-box;
+}
+
+.ewuit-comp-cover-first::after {
+  left: var(--ewuit-comp-cover-left);
+  right: var(--ewuit-comp-cover-right);
+  top: 50%;
+  transform: translateX(
+      calc(100% + 3px)
+    )
+    translateY(-50%);
+  content: attr(data-h);
+}
+
+div.ewuit-comp-cover-second {
+  background-color: rgba(
+    37,
+    144,
+    255,
+    0.1
+  );
+  border: var(--cover-border-width)
+    solid var(--cover-second-color);
+  border-radius: var(
+    --cover-distance-second-border-radius
+  );
+  pointer-events: none;
+}
+
+div.ewuit-comp-rulers {
+  display: none;
+}
+
+div.ruler {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  border: var(--cover-border-width)
+    dashed var(--cover-second-color);
+  z-index: 9998;
+  pointer-events: none;
+  box-sizing: border-box;
+  word-break: keep-all;
+  pointer-events: none;
+}
+/* 水平 */
+div.ruler.h {
+  border-left: 0;
+  border-right: 0;
+  left: 0;
+}
+/* 垂直 */
+div.ruler.v {
+  border-top: 0;
+  border-bottom: 0;
+  top: 0;
+}
+
+div.distance {
+  position: fixed;
+  background: var(--cover-first-color);
+  z-index: 9998;
+}
+div.distance.v {
+  width: var(--cover-border-width);
+}
+
+div.distance.h {
+  height: var(--cover-border-width);
+}
+
+div.distance.h::after,
+div.distance.v::before {
+  pointer-events: none;
+  word-break: keep-all;
+  content: attr(data-v);
+  position: absolute;
+  font-weight: 400;
+  font-family: var(--ewuit-font-family);
+  font-size: var(--distance-font-size);
+  line-height: var(
+    --distance-font-size
+  );
+  color: var(--cover-first-color);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.7
+  );
+  padding: 5px;
+  display: var(
+    --cover-distance-display
+  );
+}
+
+div.distance.h::after {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 4px;
+}
+
+div.distance.v::before {
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+}

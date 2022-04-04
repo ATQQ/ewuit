@@ -1,6 +1,4 @@
-export enum RANK{
-    FIRST,
-    SECOND,
-    THIRD
+export enum FUN_TYPE {
+  ATTRIBUTE='attribute',
+  DISTANCE='distance'
 }
-export const MODULE_MV_ID = 'abaaba';

@@ -9,12 +9,51 @@
 </head>
 
 <body>
+    <style>
+        ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        li {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        li:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        li:nth-child(odd) {
+            background-color: red;
+        }
+    </style>
+    <!-- 测试数据 -->
+    <script>
+        const ul = document.createElement('ul');
+        const count = 200
+        for (let i = 0; i < count; i++) {
+            const li = document.createElement('li');
+            ul.appendChild(li);
+        }
+        document.body.append(ul)
+    </script>
+    <!-- Demo1 -->
+    <!-- <script src="./dist/index.min.js"></script>
+    <script>
+        const ewuit = new Ewuit()
+        ewuit.openUI()
+    </script> -->
+    <!-- Demo2 -->
     <script type="module">
-        import PkG from './src/index.ts'
-        const d = new PkG()
-        // setTimeout(() => {
-        //     d.destroy()
-        // }, 2000)
+        import Ewuit from './src/index.ts'
+        const ewuit = new Ewuit()
+        ewuit.openUI()
     </script>
 </body>
 

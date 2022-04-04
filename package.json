@@ -1,36 +1,44 @@
 {
-  "name": "tpl-web-lib",
-  "version": "0.0.3",
-  "description": "web library template",
+  "name": "ewuit",
+  "version": "0.0.1-beta.6",
+  "description": "an easy web ui inspect tool",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ATQQ/ewuit"
+  },
+  "homepage": "https://github.com/ATQQ/ewuit",
   "scripts": {
-    "serve": "vite",
-    "build:dev": "dev=true vite build -w",
-    "build": "rimraf dist && vite build && npm run roll-types",
-    "roll-types": "api-extractor run && npm run rm-temp-types",
-    "rm-temp-types": "rimraf dist/lib dist/types dist/constants",
+    "dev": "vite",
+    "build": "run-s build:*",
+    "build:source": "vite build",
+    "build:type": "tsup src/index.ts --dts-only",
     "lint": "eslint src --fix --ext .ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["ewuit","ui-tools","ui-inspect","web-inspect","web-sdk"],
+  "author": "sugar",
+  "license": "MIT",
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.18.12",
-    "@rollup/plugin-typescript": "^8.2.5",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
-    "core-js": "^3.18.1",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "@rollup/plugin-typescript": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "esbuild-sass-plugin": "^2.2.6",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-import": "^2.25.4",
     "less": "^4.1.2",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "sass": "^1.42.1",
+    "sass": "^1.49.10",
     "tslib": "^2.3.1",
-    "typescript": "^4.4.3",
-    "vite": "^2.6.3"
+    "tsup": "^5.12.1",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.0"
+  },
+  "dependencies": {
+    "core-js": "^3.21.1"
   }
 }

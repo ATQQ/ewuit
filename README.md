@@ -1,63 +1,92 @@
-# Web SDK/Library Template Project
-开箱即用的Web SDK/Library 工程模板
+# ewuit
+means => an easy web ui inspect tool
 
-[搭建文章链接](https://sugarat.top/technology/tpl/web-sdk-tpl.html#%E5%89%8D%E8%A8%80)
-## Usage
-will add a tag to your page center
+## Demo
+| H5                                                                                             | PC                                                                                             |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| <img src="https://img.cdn.sugarat.top/mdImg/MTY0OTA4Mzk5MjU4Mw==ewuit-h5.gif" width="200px" /> | <img src="https://img.cdn.sugarat.top/mdImg/MTY0OTA4MzcwNTUzNQ==ewuit-pc.gif" width="300px" /> |
 
-![图片](https://img.cdn.sugarat.top/mdImg/MTYzMzg1NDMyNjkzNw==633854326937)
+
+## QuickStart
+append this code in your html template
+```html
+<script>
+(function () {
+    var url = '//unpkg.com/ewuit@latest/dist/index.min.js'
+    var script = document.createElement('script');
+    script.src = url;
+    document.body.appendChild(script);
+    script.onload = function () { 
+        const ewuit = new Ewuit()
+        // open a ui tool
+        ewuit.openUI()
+    }
+})();
+</script>
+```
+## Installed
+### CDN
+add script in html template
+```html
+<script src="https://unpkg.com/ewuit@latest/dist/index.min.js"></script>
+<script>
+const Ewuit = window.Ewuit
+</script>
+```
 
 ### NPM
 ```sh
 # npm
-npm i tpl-web-lib
+npm i ewuit
 
 # yarn
-yarn add tpl-web-lib
+yarn add ewuit
 
 # pnpm
-pnpm add tpl-web-lib
+pnpm add ewuit
 ```
 
 ```ts
-import libName from 'tpl-web-lib'
-new libName()
-```
-### CDN
-add script in html template
-```html
-<script src="https://unpkg.com/tpl-web-lib@latest/dist/index.min.js"></script>
-<script>
-    new LibName()
-</script>
+import Ewuit from 'ewuit'
 ```
 
-### Get Source
-1. fork
-2. clone
-3. use this template
-### Command
-```json
-{
-  "scripts": {
-    "serve": "vite",
-    "build:dev": "vite build -w",
-    "build": "rimraf dist && vite build && npm run roll-types",
-    "roll-types": "api-extractor run && npm run rm-temp-types",
-    "rm-temp-types": "rimraf dist/lib dist/types dist/constants",
-    "lint": "eslint src --fix --ext .ts"
-  }
-}
+## Usage
+### UI
+```js
+const ewuit = new Ewuit()
+
+// open a ui tool
+ewuit.openUI()
+// close a ui tool
+ewuit.closeUI()
 ```
-## TODO/Feature
-* [x] pnpm
-* [x] eslint
-* [x] typescript
-* [x] vite/rollup
-* [x] api-extractor
-* [x] build
-* [x] build:dev
-* [x] css/scss/less
-* [x] serve
-* [x] docs
-* [ ] ...
+
+### API
+You can use these apis instead of UI action panels
+```js
+const ewuit = new Ewuit()
+
+ewuit.call('attribute',true)
+ewuit.call('attribute',false)
+
+ewuit.call('distance',true)
+ewuit.call('distance',false)
+```
+
+### Options
+>[Ops types](./src/types/index.ts)
+```js
+// defaultValue
+const ops = {
+    scroll: false,
+}
+const ewuit = new Ewuit(ops)
+```
+
+* scroll: Whether the page is scrollable；default `false`
+
+## TODO
+
+* [x] Check Element Attribute
+* [x] Check Element Distance
+* [ ] Support More DIY Feature

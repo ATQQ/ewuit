@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "esnext",
     "module": "ESNext",
     "lib": ["ESNext", "DOM"],
     "moduleResolution": "Node",
@@ -10,12 +10,17 @@
     "esModuleInterop": true,
     "noImplicitThis": false,
     "noImplicitAny": false,
-    "declaration": true,
-    "declarationDir": "./dist",
+    "declaration": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "include": [
     "src/**/*",
