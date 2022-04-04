@@ -40,6 +40,7 @@ div.ewuit-comp-cover-first {
   );
   padding: 5px;
   box-sizing: border-box;
+  word-break: keep-all;
 }
 .ewuit-comp-cover-first::before {
   left: 50%;
