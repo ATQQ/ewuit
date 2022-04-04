@@ -4,7 +4,7 @@ import { UITool, attributeTool, distanceTool } from '@/components';
 import { FUN_TYPE } from '@/constants';
 import { addStyleDom, clonePage, getScreenHeight } from '@/utils';
 import varStyle from './assets/var.css';
-import { EwuitOps } from './types';
+import { EwuitCallMethodName, EwuitOps } from './types';
 
 class Ewuit {
   private shadowPage: HTMLElement | null;
@@ -32,7 +32,7 @@ class Ewuit {
     UITool.destroy();
   }
 
-  call(methodName: FUN_TYPE, status = true) {
+  call(methodName:EwuitCallMethodName, status = true) {
     // 处理Clone页面的逻辑
     if (status) {
       if (this.shadowPage) {

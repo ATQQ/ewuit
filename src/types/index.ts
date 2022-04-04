@@ -21,3 +21,5 @@ export interface UIInitOps{
 export interface EwuitOps{
   toolConfig?:ToolConfig
 }
+
+export type EwuitCallMethodName = 'attribute' | 'distance'
