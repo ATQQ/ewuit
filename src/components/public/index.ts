@@ -56,9 +56,9 @@ class PublicTool {
   /**
    * @returns 是否继续处理后续逻辑
    */
-  handle(e: MouseEvent) {
+  handle(e: MouseEvent, frequentClickRemoveTimes?:number) {
     const clickDom = e.target as HTMLElement;
-    return this.frequentClickRemove(clickDom);
+    return this.frequentClickRemove(clickDom, frequentClickRemoveTimes);
   }
 
   /**

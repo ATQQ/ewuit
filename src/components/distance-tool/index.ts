@@ -120,7 +120,7 @@ class DistanceTool {
    * 处理点击
    */
   handle(e: MouseEvent) {
-    if (!publicTool.handle(e)) {
+    if (!publicTool.handle(e, 4)) {
       this.clear();
       return;
     }
