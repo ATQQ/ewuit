@@ -126,6 +126,7 @@ div.distance.h {
 div.distance.h::after,
 div.distance.v::before {
   pointer-events: none;
+  word-break: keep-all;
   content: attr(data-v);
   position: absolute;
   font-weight: 400;
