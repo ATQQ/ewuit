@@ -9,8 +9,11 @@ import { EwuitCallMethodName, EwuitOps } from './types';
 class Ewuit {
   private shadowPage: HTMLElement | null;
 
+  private options?:Partial<EwuitOps>;
+
   constructor(options?:Partial<EwuitOps>) {
     this.shadowPage = null;
+    this.options = options;
     addStyleDom(document.documentElement, varStyle);
     attributeTool.config(options?.toolConfig?.attributeTool);
     distanceTool.config(options?.toolConfig?.distanceTool);
@@ -38,7 +41,7 @@ class Ewuit {
       if (this.shadowPage) {
         return;
       }
-      this.shadowPage = clonePage();
+      this.shadowPage = clonePage(this?.options?.scroll);
       document.body.setAttribute('hidden', 'true');
       // 特殊处理body高度超过视图的，阻止其滑动
       if (document.body.scrollHeight >= getScreenHeight()) {

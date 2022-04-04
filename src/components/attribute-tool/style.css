@@ -41,6 +41,7 @@
   padding: 5px;
   box-sizing: border-box;
   word-break: keep-all;
+  pointer-events: none;
 }
 .ewuit-comp-cover::before {
   left: 50%;
@@ -72,6 +73,7 @@
   /* 比自己的cover 低一层 */
   z-index: 9998;
   left: 100px;
+  pointer-events: none;
 }
 
 .ewuit-comp-wrapper {

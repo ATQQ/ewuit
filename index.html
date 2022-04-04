@@ -36,7 +36,7 @@
     <!-- 测试数据 -->
     <script>
         const ul = document.createElement('ul');
-        const count = 20
+        const count = 200
         for (let i = 0; i < count; i++) {
             const li = document.createElement('li');
             ul.appendChild(li);
@@ -52,7 +52,9 @@
     <!-- Demo2 -->
     <script type="module">
         import Ewuit from './src/index.ts'
-        const ewuit = new Ewuit()
+        const ewuit = new Ewuit({
+         scroll:false
+        })
         ewuit.openUI()
     </script>
 </body>

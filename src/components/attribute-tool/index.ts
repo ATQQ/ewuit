@@ -10,7 +10,6 @@ import {
   h,
   isImgDom,
   isTextDom,
-  preventTouchMove,
   stylePropConvert,
   updateDomDisplay,
   updateDomStyles,
@@ -72,7 +71,6 @@ class ElementTool {
   initCover() {
     const coverDom = h('div', 'ewuit-comp-cover');
     addStyleDom(coverDom, style);
-    preventTouchMove(coverDom);
     addToHtml(coverDom);
 
     this.coverDom = coverDom;
@@ -83,7 +81,6 @@ class ElementTool {
    */
   initAttrModal() {
     const modalDom = h('div', 'ewuit-comp-modal');
-    preventTouchMove(modalDom);
     updateDomDisplay(modalDom, 'none');
     addStyleDom(modalDom, style);
 

@@ -36,7 +36,7 @@ export function throttle(fn, delay = 1000) {
  * 克隆页面
  * @returns 包含Body与Head的shadow Dom对象
  */
-export function clonePage() {
+export function clonePage(scroll = true) {
   const shadowDom = h('div');
   addToHtml(shadowDom);
   shadowDom.attachShadow({ mode: 'open' });
@@ -46,16 +46,18 @@ export function clonePage() {
   // 阻止触发默认事件
   preventDomDefault(shadowDom, 'click');
 
-  // 阻止上下滑手势触发页面滚动
-  preventTouchMove(shadowDom);
-
   // 使用拷贝页面作为新页面使用
   const tBody = document.body.cloneNode(true) as HTMLElement;
   const tHead = document.head.cloneNode(true) as HTMLElement;
 
+  if (!scroll) {
+    // 阻止上下滑手势触发页面滚动
+    preventTouchMove(shadowDom);
+    // TODO:阻止滚动
+  }
+
   // 移除工具创建的ui-tool
   tBody.querySelector(`.${uiWrapperClass}`)?.remove();
-  // TODO: 移除clone出的遮罩相关的DOM
   tBody.querySelectorAll('div[class^="ewuit-comp-"]').forEach((v) => {
     v.remove();
   });
@@ -70,15 +72,9 @@ export function clonePage() {
     left: '0px',
     top: '0px',
     width: '100%',
-    height: unitValue(getScreenHeight()),
   });
 
   // ----- 下面处理避免页面闪烁 ------
-  // 先完全透明
-  // updateDomStyles(tBody, {
-  //   opacity: '0',
-  // });
-
   // 将clone的视图滚动到原视图一样的位置，避免与原视图不一致
   assignmentDomStyle(tBody, document.body);
 
@@ -151,7 +147,7 @@ function assignmentDomStyle(cloneDom: HTMLElement, originDom: Element) {
  */
 export function preventTouchMove(el: HTMLElement) {
   preventDomDefault(el, 'touchmove', () => {
-    Toast('禁止屏幕滚动&滚动');
+    Toast('禁止屏幕滑动');
   });
 }
 

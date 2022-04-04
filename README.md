@@ -66,6 +66,8 @@ const ewuit = new Ewuit()
 ewuit.call('attribute',true)
 ewuit.call('distance',true)
 ```
+
+### Options
 ## TODO
 
 * [x] Check Element Attribute

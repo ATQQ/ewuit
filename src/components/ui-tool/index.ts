@@ -1,7 +1,7 @@
 import { FUN_TYPE } from '@/constants';
 import { UIInitOps } from '@/types';
 import {
-  addStyleDom, addToHtml, h,
+  addStyleDom, addToHtml, h, preventDomDefault,
 } from '@/utils';
 import style from './index.scss';
 
@@ -93,6 +93,7 @@ export default class EwuitUITool {
     addToHtml(toolTip);
 
     this.ui = toolTip;
+    preventDomDefault(toolTip, 'touchmove');
     this.ui.addEventListener('click', this.bindTogglePanel.bind(this));
   }
 

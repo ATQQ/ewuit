@@ -18,10 +18,12 @@ div.ewuit-comp-cover-first {
   border-radius: var(
     --cover-distance-first-border-radius
   );
+  pointer-events: none;
 }
 
 .ewuit-comp-cover-first::after,
 .ewuit-comp-cover-first::before {
+  pointer-events: none;
   position: absolute;
   display: var(--cover-size-display);
   font-weight: 400;
@@ -76,6 +78,7 @@ div.ewuit-comp-cover-second {
   border-radius: var(
     --cover-distance-second-border-radius
   );
+  pointer-events: none;
 }
 
 div.ewuit-comp-rulers {
@@ -91,6 +94,8 @@ div.ruler {
   z-index: 9998;
   pointer-events: none;
   box-sizing: border-box;
+  word-break: keep-all;
+  pointer-events: none;
 }
 /* 水平 */
 div.ruler.h {
@@ -120,6 +125,7 @@ div.distance.h {
 
 div.distance.h::after,
 div.distance.v::before {
+  pointer-events: none;
   content: attr(data-v);
   position: absolute;
   font-weight: 400;

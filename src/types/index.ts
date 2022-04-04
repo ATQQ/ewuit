@@ -20,6 +20,10 @@ export interface UIInitOps{
 
 export interface EwuitOps{
   toolConfig?:ToolConfig
+  /**
+   * 是否可滑动
+   */
+  scroll?:boolean
 }
 
 export type EwuitCallMethodName = 'attribute' | 'distance'
