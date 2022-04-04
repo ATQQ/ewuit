@@ -9,22 +9,22 @@ export interface DistanceToolConfig {
   pixelConversion?: PixelConversion
 }
 export interface ToolConfig {
-  attributeTool?: AttributeToolConfig
-  distanceTool?: DistanceToolConfig
+  attribute?: AttributeToolConfig
+  distance?: DistanceToolConfig
 }
 
-export interface UIInitOps{
-  [FUN_TYPE.ATTRIBUTE]:(v:boolean)=>void
-  [FUN_TYPE.DISTANCE]:(v:boolean)=>void
+export interface UIInitOps {
+  [FUN_TYPE.ATTRIBUTE]: (v: boolean) => void
+  [FUN_TYPE.DISTANCE]: (v: boolean) => void
 }
 
-export interface EwuitOps{
-  toolConfig:ToolConfig
+export interface EwuitOps {
+  toolConfig: ToolConfig
   /**
    * 页面是否可滑动
    * @default false
    */
-  scroll:boolean
+  scroll: boolean
 }
 
 export type EwuitCallMethodName = 'attribute' | 'distance'

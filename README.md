@@ -1,8 +1,9 @@
 # ewuit
 means => an easy web ui inspect tool
 
-| demo | other App1 |
-| ---- | ---------- |
+| H5  | PC  |
+| --- | --- |
+
 
 ## QuickStart
 append this code in your html template
@@ -64,10 +65,24 @@ You can use these apis instead of UI action panels
 const ewuit = new Ewuit()
 
 ewuit.call('attribute',true)
+ewuit.call('attribute',false)
+
 ewuit.call('distance',true)
+ewuit.call('distance',false)
 ```
 
 ### Options
+>[Ops types](./src/types/index.ts)
+```js
+// defaultValue
+const ops = {
+    scroll: false,
+}
+const ewuit = new Ewuit(ops)
+```
+
+* scroll: Whether the page is scrollable；default `false`
+
 ## TODO
 
 * [x] Check Element Attribute

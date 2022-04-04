@@ -15,8 +15,8 @@ class Ewuit {
     this.shadowPage = null;
     this.options = options;
     addStyleDom(document.documentElement, varStyle);
-    attributeTool.config(options?.toolConfig?.attributeTool);
-    distanceTool.config(options?.toolConfig?.distanceTool);
+    attributeTool.config(options?.toolConfig?.attribute);
+    distanceTool.config(options?.toolConfig?.distance);
     // TODO: 特殊处理meta viewport 不是1的情况
   }
 
