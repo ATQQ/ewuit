@@ -1,8 +1,10 @@
 # ewuit
 means => an easy web ui inspect tool
 
-| H5  | PC  |
-| --- | --- |
+## Demo
+| H5                                                                                             | PC                                                                                             |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| <img src="https://img.cdn.sugarat.top/mdImg/MTY0OTA4Mzk5MjU4Mw==ewuit-h5.gif" width="200px" /> | <img src="https://img.cdn.sugarat.top/mdImg/MTY0OTA4MzcwNTUzNQ==ewuit-pc.gif" width="300px" /> |
 
 
 ## QuickStart
