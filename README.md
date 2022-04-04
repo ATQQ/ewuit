@@ -1,14 +1,33 @@
 # ewuit
 means => an easy web ui inspect tool
-## Usage
-TODO: 演示效果
 
+| demo | other App1 |
+| ---- | ---------- |
+
+## QuickStart
+append this code in your html template
+```html
+<script>
+(function () {
+    var url = '//unpkg.com/ewuit@latest/dist/index.min.js'
+    var script = document.createElement('script');
+    script.src = url;
+    document.body.appendChild(script);
+    script.onload = function () { 
+        const ewuit = new Ewuit()
+        // open a ui tool
+        ewuit.openUI()
+    }
+})();
+</script>
+```
+## Installed
 ### CDN
 add script in html template
 ```html
 <script src="https://unpkg.com/ewuit@latest/dist/index.min.js"></script>
 <script>
-const Ewuit =window.Ewuit
+const Ewuit = window.Ewuit
 </script>
 ```
 
@@ -27,8 +46,28 @@ pnpm add ewuit
 ```ts
 import Ewuit from 'ewuit'
 ```
-## Feature
-* [ ] Attributes
-* [ ] Measure
 
+## Usage
+### UI
+```js
+const ewuit = new Ewuit()
+
+// open a ui tool
+ewuit.openUI()
+// close a ui tool
+ewuit.closeUI()
+```
+
+### API
+You can use these apis instead of UI action panels
+```js
+const ewuit = new Ewuit()
+
+ewuit.call('attribute',true)
+ewuit.call('distance',true)
+```
 ## TODO
+
+* [x] Check Element Attribute
+* [x] Check Element Distance
+* [ ] Support More DIY Feature
