@@ -83,6 +83,7 @@ div.ruler {
     dashed var(--cover-second-color);
   z-index: 9998;
   pointer-events: none;
+  box-sizing: border-box;
 }
 /* 水平 */
 div.ruler.h {
