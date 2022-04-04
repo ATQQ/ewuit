@@ -36,7 +36,7 @@ export function throttle(fn, delay = 1000) {
  * 克隆页面
  * @returns 包含Body与Head的shadow Dom对象
  */
-export function clonePage(scroll = true) {
+export function clonePage(scroll = false) {
   const shadowDom = h('div');
   addToHtml(shadowDom);
   shadowDom.attachShadow({ mode: 'open' });
@@ -53,7 +53,12 @@ export function clonePage(scroll = true) {
   if (!scroll) {
     // 阻止上下滑手势触发页面滚动
     preventTouchMove(shadowDom);
-    // TODO:阻止滚动
+    preventDomDefault(shadowDom, 'wheel', () => {
+      Toast('禁止页面滚动');
+    });
+    addStyleDom(shadowDom, `::-webkit-scrollbar{
+      width:0 !important;
+    }`);
   }
 
   // 移除工具创建的ui-tool
