@@ -1,13 +1,14 @@
-import { FUN_TYPE } from '@/constants';
+import { FUN_TYPE } from '@/constants'
 
 export type PixelConversion = (px: number | string) => string
 
-export interface AttributeToolConfig {
+export interface FunToolConfig {
   pixelConversion?: PixelConversion
 }
-export interface DistanceToolConfig {
-  pixelConversion?: PixelConversion
-}
+
+export type AttributeToolConfig = FunToolConfig
+export type DistanceToolConfig = FunToolConfig
+
 export interface ToolConfig {
   attribute?: AttributeToolConfig
   distance?: DistanceToolConfig

@@ -1,4 +1,4 @@
 export enum FUN_TYPE {
-  ATTRIBUTE='attribute',
-  DISTANCE='distance'
+  ATTRIBUTE = 'attribute',
+  DISTANCE = 'distance'
 }

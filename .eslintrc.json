@@ -1,28 +1,52 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "root": true,
+  "overrides": [
+    {
+      "files": ["*.js"]
     },
-    "extends": [
-        "airbnb-base"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
+    {
+      "files": ["*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
         "ecmaVersion": 12,
         "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "import/extensions":"off",
-        "import/no-unresolved":"off",
-        "import/no-extraneous-dependencies":"off",
-        "no-shadow":"off",
-        "no-unused-vars":"off",
-        "class-methods-use-this":"off",
-        "no-param-reassign":"off",
-        "no-use-before-define":"off",
-        "import/prefer-default-export":"off"
+      },
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": ["off"],
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-extra-semi": "off",
+        "@typescript-eslint/no-empty-function": "warn"
+      }
     }
+  ],
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["@typescript-eslint", "todo-ddl"],
+  "rules": {
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "no-unused-vars": "off",
+    "no-shadow": "off",
+    "no-restricted-syntax": "off",
+    "no-await-in-loop": "off",
+    "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
+    "no-use-before-define": "off",
+    "no-proto": "off",
+    "class-methods-use-this": "off",
+    "todo-ddl/diy": ["warn"],
+    "quotes": ["warn", "single"],
+    "semi": ["warn", "never"],
+    "no-console": "off",
+    "import/prefer-default-export": "off"
+  }
 }
