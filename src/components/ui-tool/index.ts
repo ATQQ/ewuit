@@ -91,17 +91,18 @@ export default class EwuitUITool {
 
     this.ui = toolTip
     preventDomDefault(toolTip, 'touchmove')
-    this.ui.addEventListener('click', this.bindTogglePanel.bind(this))
+    this.bindTogglePanel = this.bindTogglePanel.bind(this)
+    this.ui.addEventListener('click', this.bindTogglePanel)
   }
 
   static destroy() {
     if (this.ui) {
-      this.ui.removeEventListener('click', this.bindTogglePanel.bind(this))
+      this.ui.removeEventListener('click', this.bindTogglePanel)
       this.ui.remove()
     }
   }
 
   static isExist() {
-    return !!document.querySelector(uiWrapperClass)
+    return !!document.querySelector(`.${uiWrapperClass}`)
   }
 }
